@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="switchLoginViewModel"
+            type="com.basemosama.studentportal.ui.login.LoginViewModel" />
+
+        <import type="com.basemosama.studentportal.utility.Constants" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RadioGroup
+            android:id="@+id/login_switch"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:layout_marginBottom="@dimen/margin_medium"
+            android:background="@xml/pink_out_line"
+            android:checkedButton="@id/student_button"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/student_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginBottom="1dp"
+                android:layout_weight="1"
+                android:background="@xml/toggle_widget_background"
+                android:button="@null"
+                android:gravity="center"
+                android:onClick="@{() -> switchLoginViewModel.setType(Constants.STUDENT_PATH)}"
+                android:tag="@string/student_text"
+                android:text="@string/student_text"
+                android:textColor="@color/colorWhite" />
+
+            <RadioButton
+                android:id="@+id/lecturer_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginBottom="1dp"
+                android:layout_weight="1"
+                android:background="@xml/toggle_widget_background"
+                android:button="@null"
+                android:gravity="center"
+                android:onClick="@{() -> switchLoginViewModel.setType(Constants.PROFESSOR_PATH)}"
+                android:tag="@string/lecturer_text"
+                android:text="@string/lecturer_text"
+                android:textColor="@color/colorWhite"
+
+                />
+        </RadioGroup>
+
+    </LinearLayout>
+</layout>

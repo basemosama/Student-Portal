@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/professor_navigation"
+    app:startDestination="@id/nav_group">
+
+    <fragment
+        android:id="@id/nav_group"
+        android:name="com.basemosama.studentportal.ui.professor.group.ProfessorGroupFragment"
+        android:label="Group"
+        tools:layout="@layout/fragment_professor_group">
+
+        <action
+            android:id="@+id/action_nav_group_to_professor_comment_fragment"
+            app:destination="@id/professor_comment_fragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@id/nav_events"
+        android:name="com.basemosama.studentportal.ui.professor.professor_events.ProfessorEventsFragment"
+        android:label="@string/menu_events"
+        tools:layout="@layout/fragment_events">
+        <action
+            android:id="@+id/action_nav_events_to_prof_event_detail_fragment"
+            app:destination="@id/prof_event_detail_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/prof_event_detail_fragment"
+        android:name="com.basemosama.studentportal.ui.professor.professor_events.ProfessorEventDetailFragment"
+        android:label="{event_title}"
+        tools:layout="@layout/fragment_event_detail">
+        <argument
+            android:name="event_title"
+            android:defaultValue="Events"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.basemosama.studentportal.ui.professor.profile.ProfessorProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_professor_profile" />
+    <fragment
+        android:id="@+id/nav_assignments"
+        android:name="com.basemosama.studentportal.ui.professor.assignment.ProfessorAssignmentFragment"
+        android:label="Assignments"
+        tools:layout="@layout/fragment_professor_assignment">
+        <action
+            android:id="@+id/action_nav_assignments_to_add_assignment_fragment"
+            app:destination="@id/add_assignment_fragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/add_assignment_fragment"
+        android:name="com.basemosama.studentportal.ui.professor.add_assignment.AddAssignmentFragment"
+        android:label="Add Assignment"
+        tools:layout="@layout/fragment_add_assignment" />
+    <fragment
+        android:id="@id/nav_source"
+        android:name="com.basemosama.studentportal.ui.professor.source.ProfessorSourceFragment"
+        android:label="Sources"
+        tools:layout="@layout/fragment_professor_sources">
+        <action
+            android:id="@+id/action_professor_source_fragment_to_add_source_fragment"
+            app:destination="@id/addSourceFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/addSourceFragment"
+        android:name="com.basemosama.studentportal.ui.professor.add_source.AddSourceFragment"
+        android:label="Add Source"
+        tools:layout="@layout/fragment_add_source" />
+    <fragment
+        android:id="@id/nav_result"
+        android:name="com.basemosama.studentportal.ui.professor.year_work.ProfessorYearWorkFragment"
+        android:label="Year Work"
+        tools:layout="@layout/fragment_professor_year_work">
+        <action
+            android:id="@+id/action_nav_result_to_add_marks_fragment"
+            app:destination="@id/add_marks_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/add_marks_fragment"
+        android:name="com.basemosama.studentportal.ui.professor.add_marks.AddMarksFragment"
+        android:label="Add Marks"
+        tools:layout="@layout/fragment_add_marks">
+        <argument
+            android:name="student"
+            app:argType="com.basemosama.studentportal.model.student.User" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_table"
+        android:name="com.basemosama.studentportal.ui.professor.table.ProfessorTableFragment"
+        android:label="Table"
+        tools:layout="@layout/fragment_professor_table" />
+    <fragment
+        android:id="@+id/professor_comment_fragment"
+        android:name="com.basemosama.studentportal.ui.professor.group.ProfessorCommentFragment"
+        android:label="Comments"
+        tools:layout="@layout/fragment_professor_comment">
+        <action
+            android:id="@+id/action_professor_comment_fragment_to_professorReplyFragment"
+            app:destination="@id/professorReplyFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/professorReplyFragment"
+        android:name="com.basemosama.studentportal.ui.professor.group.ProfessorReplyFragment"
+        android:label="Replies"
+        tools:layout="@layout/fragment_professor_reply" />
+
+</navigation>

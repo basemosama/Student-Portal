@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <dimen name="add_assignment_bottom_padding">25dp</dimen>
+    <dimen name="add_assignment_text_size">25sp</dimen>
+    <dimen name="add_marks_text_size">22sp</dimen>
+    <dimen name="add_marks_margin_top">40dp</dimen>
+    <dimen name="design_bottom_navigation_text_size" tools:override="true">12sp</dimen>
+    <dimen name="design_bottom_navigation_active_text_size" tools:override="true">14sp</dimen>
+    <dimen name="add_marks_edit_text_size">18sp</dimen>
+    <dimen name="profile_description_text_size">18sp</dimen>
+    <dimen name="profile_details_text_size">18sp</dimen>
+    <dimen name="profile_details_title_text_size">20sp</dimen>
+    <dimen name="profile_card_item_text_size">25sp</dimen>
+
+</resources>

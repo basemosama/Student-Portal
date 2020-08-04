@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/login_navigation">
+
+    <include app:graph="@navigation/student_navigation" />
+    <include app:graph="@navigation/professor_navigation" />
+    <navigation
+        android:id="@+id/login_navigation"
+        app:startDestination="@id/splash_fragment">
+        <fragment
+            android:id="@+id/login_fragment"
+            android:name="com.basemosama.studentportal.ui.login.LoginFragment"
+            android:label="Login"
+            tools:layout="@layout/fragment_login">
+            <action
+                android:id="@+id/action_login_fragment_to_student_navigation"
+                app:destination="@id/student_navigation"
+                app:popUpTo="@id/splash_fragment"
+                app:popUpToInclusive="true" />
+            <action
+                android:id="@+id/action_login_fragment_to_professor_navigation"
+                app:destination="@id/professor_navigation"
+                app:popUpTo="@id/splash_fragment"
+                app:popUpToInclusive="true" />
+        </fragment>
+        <fragment
+            android:id="@+id/splash_fragment"
+            android:name="com.basemosama.studentportal.ui.SplashFragment"
+            android:label="Student Portal"
+            tools:layout="@layout/fragment_splash">
+            <action
+                android:id="@+id/action_splash_fragment_to_loginFragment"
+                app:destination="@id/login_fragment"
+                app:popUpTo="@id/splash_fragment"
+                app:popUpToInclusive="true" />
+            <action
+                android:id="@+id/action_splash_fragment_to_student_navigation"
+                app:destination="@id/student_navigation"
+                app:popUpTo="@id/splash_fragment"
+                app:popUpToInclusive="true" />
+            <action
+                android:id="@+id/action_splash_fragment_to_professor_navigation"
+                app:destination="@id/professor_navigation"
+                app:popUpTo="@id/splash_fragment"
+                app:popUpToInclusive="true"
+
+                />
+        </fragment>
+    </navigation>
+</navigation>

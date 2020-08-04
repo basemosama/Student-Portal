@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:cardview="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="grade"
+            type="com.basemosama.studentportal.model.student.Grades" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/result_card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:animateLayoutChanges="true"
+        app:cardElevation="6dp"
+        cardview:cardCornerRadius="6dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="3"
+                    android:gravity="center_vertical"
+                    android:padding="10dp"
+                    android:textColor="@color/colorBlue"
+                    android:textSize="25sp"
+                    app:text="@{grade.name}"
+                    tools:text="First Year :" />
+
+                <ImageView
+                    android:id="@+id/result_arrow"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:src="@drawable/arrow_down" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/result_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/unavailable_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/result_unavailable_message"
+                    android:textColor="#6F38B3"
+                    android:textSize="20sp"
+                    android:visibility="gone" />
+
+
+                <TableLayout
+                    android:id="@+id/result_table_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:gravity="center"
+
+
+                    >
+
+                    <TableRow
+                        android:id="@+id/result_text_table"
+                        android:gravity="center"
+
+                        >
+
+                        <TextView
+                            android:layout_column="1"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:padding="3dp"
+                            android:text="@string/subject_text"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="20sp"
+
+                            />
+
+                        <TextView
+                            android:layout_column="2"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:padding="3dp"
+                            android:text="@string/result_text"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="20sp"
+
+                            />
+
+                        <TextView
+                            android:layout_column="3"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:padding="3dp"
+                            android:text="@string/grade_text"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="20sp"
+
+                            />
+                    </TableRow>
+
+                </TableLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/subject_result_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:paddingBottom="10dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

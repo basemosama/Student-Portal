@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item
+        android:id="@+id/nav_group"
+        android:icon="@drawable/ic_group1"
+        android:title="@string/menu_group" />
+    <item
+        android:id="@+id/nav_subject"
+        android:icon="@drawable/ic_subject"
+        android:title="@string/menu_subject" />
+    <item
+        android:id="@+id/nav_assignments"
+        android:icon="@drawable/ic_assignment"
+        android:title="@string/menu_assignments" />
+    <item
+        android:id="@+id/nav_source"
+        android:icon="@drawable/ic_source"
+        android:title="@string/menu_sources" />
+    <item
+        android:id="@+id/nav_table"
+        android:icon="@drawable/ic_table"
+        android:title="@string/menu_table" />
+
+    <item
+        android:id="@+id/nav_result"
+        android:icon="@drawable/ic_result"
+        android:title="@string/menu_result" />
+    <item
+        android:id="@+id/nav_events"
+        android:icon="@drawable/ic_event"
+        android:title="@string/menu_events" />
+    <item
+        android:id="@+id/nav_logout"
+        android:icon="@drawable/logout"
+        android:title="@string/logout" />
+
+</menu>

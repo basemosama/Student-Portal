@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.text.TextUtils" />
+
+        <variable
+            name="studentResult"
+            type="com.basemosama.studentportal.model.student.SubjectResult" />
+
+        <variable
+            name="subject"
+            type="com.basemosama.studentportal.model.student.Subject" />
+    </data>
+
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+
+        >
+
+        <TableRow
+            android:id="@+id/result_text_table"
+            android:gravity="center"
+            android:visibility="invisible">
+
+            <TextView
+                android:id="@+id/subject_name"
+                android:layout_column="1"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text="@string/subject_text"
+                android:textColor="@color/colorAccent"
+                android:textSize="20sp"
+
+                />
+
+            <TextView
+                android:id="@+id/subject_result"
+                android:layout_column="2"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text="@string/result_text"
+                android:textColor="@color/colorAccent"
+                android:textSize="20sp"
+
+                />
+
+            <TextView
+                android:id="@+id/subject_grade"
+                android:layout_column="3"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text="@string/grade_text"
+                android:textColor="@color/colorAccent"
+                android:textSize="20sp"
+
+                />
+        </TableRow>
+
+        <TableRow android:gravity="center">
+
+            <TextView
+                android:id="@+id/subject_name_value"
+                android:layout_column="1"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="3dp"
+                android:textColor="@color/colorPrimaryDarkBlue"
+                android:textSize="18sp"
+                app:placeholder="@{@string/unavailable_text}"
+                app:text="@{subject.name}"
+                tools:text="Circuits"
+
+                />
+
+            <TextView
+                android:id="@+id/subject_result_value"
+                android:layout_column="2"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="3dp"
+                android:textColor="@color/colorBlack"
+                android:textSize="18sp"
+                app:placeholder="@{@string/unavailable_text}"
+                app:text="@{String.valueOf(studentResult.result)}"
+                tools:text="80"
+
+
+                />
+
+            <TextView
+                android:id="@+id/subject_grade_value"
+                android:layout_column="3"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="3dp"
+                android:textColor="@color/colorBlack"
+                android:textSize="18sp"
+                app:placeholder="@{@string/unavailable_text}"
+                app:text="@{studentResult.grade}"
+                tools:text="Good"
+
+                />
+        </TableRow>
+
+
+    </TableLayout>
+</layout>

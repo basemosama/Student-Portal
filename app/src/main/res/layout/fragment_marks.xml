@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="marks"
+            type="com.basemosama.studentportal.model.student.Marks" />
+    </data>
+
+    <TableLayout
+        android:id="@+id/marks_table"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+
+        >
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@xml/table_border">
+
+            <TextView
+                android:layout_column="1"
+                android:layout_weight="1"
+                android:background="@xml/table_border"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text="@string/attendance"
+                android:textColor="@color/colorIndigo"
+                android:textSize="15sp"
+
+                />
+
+            <TextView
+                android:layout_column="2"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text="@string/work"
+                android:textColor="@color/colorIndigo"
+                android:textSize="15sp"
+
+                />
+
+            <TextView
+                android:layout_column="3"
+                android:layout_weight="1"
+                android:background="@xml/table_border"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text="@string/midterm"
+                android:textColor="@color/colorIndigo"
+                android:textSize="15sp"
+
+                />
+
+            <TextView
+                android:layout_column="4"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="3dp"
+                android:text="@string/semester"
+                android:textColor="@color/colorIndigo"
+                android:textSize="15sp"
+
+                />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@xml/table_border">
+
+            <TextView
+                android:id="@+id/attendance_value"
+                android:layout_column="1"
+                android:layout_weight="1"
+                android:background="@xml/table_border"
+                android:gravity="center"
+                android:padding="3dp"
+                android:textColor="@color/colorBlack"
+                android:textSize="15sp"
+                app:text="@{marks.attendance}"
+                tools:text="30"
+
+                />
+
+            <TextView
+                android:id="@+id/work_value"
+                android:layout_column="2"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="3dp"
+                android:textColor="@color/colorBlack"
+                android:textSize="15sp"
+                app:text="@{marks.work}"
+                tools:text="20"
+
+                />
+
+            <TextView
+                android:id="@+id/midterm_value"
+                android:layout_column="3"
+                android:layout_weight="1"
+                android:background="@xml/table_border"
+                android:gravity="center"
+                android:padding="3dp"
+                android:textColor="@color/colorBlack"
+                android:textSize="15sp"
+                app:text="@{marks.midterm}"
+                tools:text="10"
+
+                />
+
+            <TextView
+                android:id="@+id/semester_value"
+                android:layout_column="4"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="3dp"
+                android:textColor="@color/colorBlack"
+                android:textSize="15sp"
+                app:text="@{marks.semester}"
+                tools:text="10"
+
+                />
+        </TableRow>
+    </TableLayout>
+</layout>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="table"
+            type="com.basemosama.studentportal.model.student.Table" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/professor_table_relative_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.skydoves.powerspinner.PowerSpinnerView
+            android:id="@+id/table_grade_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/dropDownViewColor"
+            android:gravity="center"
+            android:hint="@string/year_work_spinner_grade_text"
+            android:padding="15dp"
+            android:textColor="@color/colorWhite"
+            android:textColorHint="@color/colorWhite"
+            android:textSize="20sp"
+            app:spinner_arrow_gravity="end"
+            app:spinner_arrow_padding="8dp"
+            app:spinner_divider_color="@color/colorWhite"
+            app:spinner_divider_show="true"
+            app:spinner_divider_size="1dp"
+            app:spinner_popup_animation="dropdown"
+            app:spinner_popup_background="@color/dropDownViewLightColor"
+            app:spinner_popup_elevation="14dp" />
+
+        <TextView
+            android:id="@+id/professor_choose_grade_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_margin="20dp"
+            android:gravity="center"
+            android:text="@string/choose_table_text"
+            android:textColor="@color/colorBlue"
+            android:textSize="25sp" />
+
+        <com.github.chrisbanes.photoview.PhotoView
+            android:id="@+id/professor_table_photo_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/table_grade_spinner"
+            app:error="@{@drawable/placeholder}"
+            app:imageUrl="@{table.imageUrl}" />
+
+
+    </RelativeLayout>
+
+</layout>

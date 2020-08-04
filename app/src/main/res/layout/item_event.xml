@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:cardview="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="event"
+            type="com.basemosama.studentportal.model.student.Event" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        cardview:cardCornerRadius="10dp"
+        cardview:cardElevation="6dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/image_event_item"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:contentDescription="@string/event_image_content_description"
+                android:scaleType="centerCrop"
+                app:error="@{@drawable/event_placeholder}"
+                app:imageUrl="@{event.imageUrl}"
+                tools:src="@drawable/event_placeholder" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="20dp"
+                android:text="@{event.title}"
+                android:textColor="@color/colorBlack"
+                android:textSize="20sp"
+                tools:text="IEEE Career Day" />
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

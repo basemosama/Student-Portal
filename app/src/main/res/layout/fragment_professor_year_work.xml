@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.basemosama.studentportal.ui.professor.year_work.ProfessorYearWorkViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/professor_year_work_relative_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/professor_year_work_spinner_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.skydoves.powerspinner.PowerSpinnerView
+                android:id="@+id/year_work_department_spinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="@color/dropDownViewColor"
+                android:gravity="center"
+                android:hint="@string/year_work_spinner_department_text"
+                android:padding="15dp"
+                android:textColor="@color/colorWhite"
+                android:textColorHint="@color/colorWhite"
+                android:textSize="15sp"
+                app:spinner_arrow_gravity="end"
+                app:spinner_arrow_padding="8dp"
+                app:spinner_divider_color="@color/colorWhite"
+                app:spinner_divider_show="true"
+                app:spinner_divider_size="1dp"
+                app:spinner_popup_animation="dropdown"
+                app:spinner_popup_background="@color/dropDownViewLightColor"
+                app:spinner_popup_elevation="14dp" />
+
+            <com.skydoves.powerspinner.PowerSpinnerView
+                android:id="@+id/year_work_grade_spinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="@color/dropDownViewColor"
+                android:gravity="center"
+                android:hint="@string/year_work_spinner_grade_text"
+                android:padding="15dp"
+                android:textColor="@color/colorWhite"
+                android:textColorHint="@color/colorWhite"
+                android:textSize="15sp"
+                app:spinner_arrow_gravity="end"
+                app:spinner_arrow_padding="8dp"
+                app:spinner_divider_color="@color/colorWhite"
+                app:spinner_divider_show="true"
+                app:spinner_divider_size="1dp"
+                app:spinner_popup_animation="dropdown"
+                app:spinner_popup_background="@color/dropDownViewLightColor"
+                app:spinner_popup_elevation="14dp" />
+        </LinearLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/professor_year_work_spinner_layout"
+            android:layout_marginTop="10dp">
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/professor_student_names_rv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:isLayoutMangerLinear="@{true}" />
+        </androidx.core.widget.NestedScrollView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_margin="20dp"
+            android:gravity="center"
+            android:text="@string/show_students_message"
+            android:textColor="@color/colorBlue"
+            android:textSize="25sp"
+            app:isVisible="@{viewModel.isStudentsLoadedMutableLiveData}" />
+
+
+    </RelativeLayout>
+
+</layout>

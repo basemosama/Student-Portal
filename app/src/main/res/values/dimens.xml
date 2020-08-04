@@ -1,0 +1,21 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="nav_header_vertical_spacing">8dp</dimen>
+    <dimen name="nav_header_height">176dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="margin_medium">20dp</dimen>
+    <dimen name="add_assignment_bottom_padding">20dp</dimen>
+    <dimen name="add_assignment_text_size">20sp</dimen>
+    <dimen name="add_marks_text_size">18sp</dimen>
+    <dimen name="add_marks_margin_top">25dp</dimen>
+    <dimen name="design_bottom_navigation_text_size" tools:override="true">10sp</dimen>
+    <dimen name="design_bottom_navigation_active_text_size" tools:override="true">12sp</dimen>
+    <dimen name="add_marks_edit_text_size">15sp</dimen>
+    <dimen name="profile_description_text_size">15sp</dimen>
+    <dimen name="profile_details_text_size">16sp</dimen>
+    <dimen name="profile_details_title_text_size">18sp</dimen>
+    <dimen name="profile_card_item_text_size">20sp</dimen>
+
+</resources>

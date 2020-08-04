@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.basemosama.studentportal.ui.professor.add_marks.AddMarksViewModel" />
+
+        <variable
+            name="studentName"
+            type="String" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorGreyBlue"
+        android:paddingBottom="@dimen/add_assignment_bottom_padding">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/marks_buttons_layout"
+            android:background="@color/colorGreyBlue"
+            android:paddingBottom="20dp">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/add_assignment_bottom_padding">
+
+
+                <TextView
+                    android:id="@+id/add_marks_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:text="@string/add_marks_text"
+                    android:textColor="@color/colorBlue"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:id="@+id/add_marks_student_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/add_marks_text"
+                    android:layout_margin="5dp"
+                    android:gravity="center"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="20sp"
+                    app:text="@{studentName}"
+                    tools:text="Basem Osama Fathy" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/add_marks_student_name"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/add_marks_subject_linear_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/add_marks_subject_tv"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:layout_weight="2"
+                            android:text="@string/add_subject_text"
+                            android:textColor="@color/colorBlue"
+                            android:textSize="@dimen/add_marks_text_size" />
+
+                        <com.skydoves.powerspinner.PowerSpinnerView
+                            android:id="@+id/marks_subject_spinner"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="3"
+                            android:background="@color/dropDownViewColor"
+                            android:gravity="center"
+                            android:hint="@string/subject_spinner_hint"
+                            android:padding="15dp"
+                            android:textColor="@color/colorWhite"
+                            android:textColorHint="@color/colorWhite"
+                            android:textSize="16sp"
+                            app:spinner_arrow_gravity="end"
+                            app:spinner_arrow_padding="8dp"
+                            app:spinner_divider_color="@color/colorWhite"
+                            app:spinner_divider_show="true"
+                            app:spinner_divider_size="1dp"
+                            app:spinner_popup_animation="dropdown"
+                            app:spinner_popup_background="@color/dropDownViewLightColor"
+                            app:spinner_popup_elevation="14dp" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/add_marks_attendance_linear_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="@dimen/add_marks_margin_top"
+                        android:layout_marginEnd="20dp"
+                        android:orientation="horizontal"
+
+                        >
+
+                        <TextView
+                            android:id="@+id/add_marks_attendance_tv"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:layout_weight="2"
+                            android:text="@string/add_marks_attendance_text"
+                            android:textColor="@color/colorBlue"
+                            android:textSize="@dimen/add_marks_text_size" />
+
+                        <EditText
+                            android:id="@+id/add_marks_attendance_edit_text"
+                            android:layout_width="0dp"
+                            android:layout_height="48dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="3"
+                            android:background="@xml/edit_text_background"
+                            android:ems="10"
+                            android:hint="@string/add_marks_attendance_hint"
+                            android:inputType="numberDecimal"
+                            android:padding="5dp"
+                            android:text="@={viewModel.attendanceMutableLiveData}"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="@dimen/add_marks_edit_text_size"
+                            app:errorEnabled="true"
+                            app:hintEnabled="false" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/add_marks_work_linear_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="@dimen/add_marks_margin_top"
+                        android:layout_marginEnd="20dp"
+                        android:orientation="horizontal"
+
+                        >
+
+                        <TextView
+                            android:id="@+id/add_marks_work_tv"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:layout_weight="2"
+                            android:text="@string/add_marks_work_text"
+                            android:textColor="@color/colorBlue"
+                            android:textSize="@dimen/add_marks_text_size" />
+
+                        <EditText
+                            android:id="@+id/add_marks_work_edit_text"
+                            android:layout_width="0dp"
+                            android:layout_height="48dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="3"
+                            android:background="@xml/edit_text_background"
+                            android:ems="10"
+                            android:hint="@string/add_marks_work_hint"
+                            android:inputType="numberDecimal"
+                            android:padding="5dp"
+                            android:text="@={viewModel.workMutableLiveData}"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="@dimen/add_marks_edit_text_size"
+                            app:errorEnabled="true"
+                            app:hintEnabled="false"
+
+                            />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/add_marks_midterm_linear_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="@dimen/add_marks_margin_top"
+                        android:layout_marginEnd="20dp"
+                        android:orientation="horizontal"
+
+                        >
+
+                        <TextView
+                            android:id="@+id/add_marks_midterm_tv"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:layout_weight="2"
+                            android:text="@string/add_marks_midterm_text"
+                            android:textColor="@color/colorBlue"
+                            android:textSize="@dimen/add_marks_text_size" />
+
+                        <EditText
+                            android:id="@+id/add_marks_midterm_edit_text"
+                            android:layout_width="0dp"
+                            android:layout_height="48dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="3"
+                            android:background="@xml/edit_text_background"
+                            android:ems="10"
+                            android:hint="@string/add_marks_midterm_hint"
+                            android:inputType="numberDecimal"
+                            android:padding="5dp"
+                            android:text="@={viewModel.midtermMutableLiveData}"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="@dimen/add_marks_edit_text_size"
+                            app:errorEnabled="true"
+                            app:hintEnabled="false" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/add_marks_semester_linear_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="@dimen/add_marks_margin_top"
+                        android:layout_marginEnd="20dp"
+                        android:orientation="horizontal"
+
+                        >
+
+                        <TextView
+                            android:id="@+id/add_semester_path_tv"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:layout_weight="2"
+                            android:text="@string/add_marks_semester_text"
+                            android:textColor="@color/colorBlue"
+                            android:textSize="@dimen/add_marks_text_size" />
+
+                        <EditText
+                            android:id="@+id/add_marks_semester_edit_text"
+                            android:layout_width="0dp"
+                            android:layout_height="48dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="3"
+                            android:background="@xml/edit_text_background"
+                            android:ems="10"
+                            android:hint="@string/add_semester_path_hint"
+                            android:inputType="numberDecimal"
+                            android:padding="5dp"
+                            android:text="@={viewModel.semesterMutableLiveData}"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="@dimen/add_marks_edit_text_size"
+                            app:errorEnabled="true"
+                            app:hintEnabled="false"
+
+                            />
+                    </LinearLayout>
+                </LinearLayout>
+
+
+            </RelativeLayout>
+        </ScrollView>
+
+
+        <LinearLayout
+            android:id="@+id/marks_buttons_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/marks_predict_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
+                android:background="@xml/button_background"
+                android:onClick="@{viewModel::predictResult}"
+                android:text="@string/predict_result_text"
+                android:textColor="@color/colorWhite"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/marks_upload_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="1"
+                android:background="@xml/button_background"
+                android:onClick="@{viewModel::uploadMarks}"
+                android:text="@string/upload_text"
+                android:textColor="@color/colorWhite"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</layout>

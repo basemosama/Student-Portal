@@ -1,0 +1,28 @@
+package com.basemosama.studentportal.database.typeconverters;
+
+import androidx.room.TypeConverter;
+
+import com.basemosama.studentportal.model.student.Grades;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.List;
+
+public class GradesListConverter {
+
+    @TypeConverter
+    public static List<Grades> JsonToLis(String json) {
+        Gson gson = new Gson();
+        Type type = new TypeToken<List<Grades>>() {
+        }.getType();
+        return gson.fromJson(json, type);
+    }
+
+    @TypeConverter
+    public static String ListToJson(List<Grades> data) {
+        Gson gson = new Gson();
+        return data == null ? null : gson.toJson(data);
+    }
+
+}

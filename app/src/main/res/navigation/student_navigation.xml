@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/student_navigation"
+    app:startDestination="@id/nav_group">
+
+    <fragment
+        android:id="@id/nav_group"
+        android:name="com.basemosama.studentportal.ui.student.group.GroupFragment"
+        android:label="@string/menu_group"
+        tools:layout="@layout/fragment_group">
+
+        <action
+            android:id="@+id/action_nav_group_to_comment_fragment"
+            app:destination="@id/comment_fragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@id/nav_subject"
+        android:name="com.basemosama.studentportal.ui.student.subject.SubjectContainerFragment"
+        android:label="@string/menu_subject"
+        tools:layout="@layout/fragment_subject_container" />
+    <fragment
+        android:id="@id/nav_assignments"
+        android:name="com.basemosama.studentportal.ui.student.assignments.AssignmentsFragment"
+        android:label="@string/menu_assignments"
+        tools:layout="@layout/fragment_assignments" />
+    <fragment
+        android:id="@id/nav_events"
+        android:name="com.basemosama.studentportal.ui.student.events.EventsFragment"
+        android:label="@string/menu_events"
+        tools:layout="@layout/fragment_events">
+        <action
+            android:id="@+id/action_nav_events_to_event_detail_fragment"
+            app:destination="@id/event_detail_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@id/nav_result"
+        android:name="com.basemosama.studentportal.ui.student.result.ResultFragment"
+        android:label="@string/menu_result"
+        tools:layout="@layout/fragment_result" />
+    <fragment
+        android:id="@id/nav_table"
+        android:name="com.basemosama.studentportal.ui.student.table.TableFragment"
+        android:label="@string/menu_table"
+        tools:layout="@layout/fragment_table" />
+    <fragment
+        android:id="@+id/event_detail_fragment"
+        android:name="com.basemosama.studentportal.ui.student.events.EventDetailFragment"
+        android:label="{event_title}"
+        tools:layout="@layout/fragment_event_detail">
+        <argument
+            android:name="event_title"
+            android:defaultValue="Events"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.basemosama.studentportal.ui.student.profile.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/comment_fragment"
+        android:name="com.basemosama.studentportal.ui.student.group.CommentFragment"
+        android:label="Comments"
+        tools:layout="@layout/fragment_comment">
+
+        <action
+            android:id="@+id/action_comment_fragment_to_reply_fragment"
+            app:destination="@id/reply_fragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/reply_fragment"
+        android:name="com.basemosama.studentportal.ui.student.group.ReplyFragment"
+        android:label="Replies"
+        tools:layout="@layout/fragment_reply" />
+</navigation>
